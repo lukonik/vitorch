@@ -42,6 +42,12 @@
         "reportsDirectory": "../coverage/packages",
         "watch": true
       }
+    },
+    "typedoc":{
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx typedoc *"
+      }
     }
   }
 }
