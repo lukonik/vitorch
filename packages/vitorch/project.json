@@ -1,7 +1,7 @@
 {
   "name": "vitorch",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/vitorch/src",
   "projectType": "library",
   "release": {
     "version": {
@@ -17,10 +17,10 @@
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages",
-        "main": "packages/src/index.ts",
-        "tsConfig": "packages/tsconfig.lib.json",
-        "assets": ["packages/*.md"]
+        "outputPath": "dist/packages/vitorch",
+        "main": "packages/vitorch/src/index.ts",
+        "tsConfig": "packages/vitorch/tsconfig.lib.json",
+        "assets": ["packages/vitorch/*.md"]
       }
     },
     "nx-release-publish": {
@@ -32,18 +32,18 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../coverage/packages"
+        "reportsDirectory": "../../coverage/packages/vitorch"
       }
     },
-    "test-watch":{
+    "test-watch": {
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../coverage/packages",
+        "reportsDirectory": "../../coverage/packages/vitorch",
         "watch": true
       }
     },
-    "typedoc":{
+    "typedoc": {
       "executor": "nx:run-commands",
       "options": {
         "command": "npx typedoc *"
